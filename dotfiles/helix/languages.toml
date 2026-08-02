@@ -1,6 +1,46 @@
+# 1. Define the WakaTime LSP globally
+[language-server.wakatime]
+command = "wakatime-ls"
+
+# 2. Attach it to your specific languages
+
+[[language]]
+name = "html"
+language-servers = ["vscode-html-language-server", "wakatime"]
+
+[[language]]
+name = "css"
+language-servers = ["vscode-css-language-server", "wakatime"]
+
+[[language]]
+name = "javascript"
+language-servers = ["typescript-language-server", "wakatime"]
+
+[[language]]
+name = "typescript"
+language-servers = ["typescript-language-server", "wakatime"]
+
+# React (TSX)
+[[language]]
+name = "tsx"
+language-servers = ["typescript-language-server", "wakatime"]
+
+# React (JSX)
+[[language]]
+name = "jsx"
+language-servers = ["typescript-language-server", "wakatime"]
+
+[[language]]
+name = "python"
+# Note: If you use pyright or ruff instead of pylsp, change "pylsp" below to match your setup
+language-servers = ["pylsp", "wakatime"]
 
 [[language]]
 name = "go"
 auto-format = true
 formatter = { command = "goimports" }
+language-servers = ["gopls", "wakatime"]
 
+[[language]]
+name = "rust"
+language-servers = ["rust-analyzer", "wakatime"]
